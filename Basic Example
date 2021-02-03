@@ -1,0 +1,29 @@
+use dataset
+select * from employee
+select * from department
+
+/*return employee record with max salary*/
+select * from employee where salary = (select MAx(salary) from employee)
+
+/*select the highets salary in the employee table*/
+select MAx(salary) from eployee
+
+/*select 2nd highest salary in employee table*/
+select Max(salary)
+from employee
+where salary Not In(select Max(salary) from employee
+
+/*select range of employees based on id*/
+select * 
+from employee
+where employee_id between 2003 and 2008
+
+/*return employee name, highest salary and department*/
+select e.first_name, e.last_name, e.salary, d.department_name
+from Employee e Inner Join Department d ON(e.department_id=d.department_id)
+where salary IN(select Max(salary) from employee)
+
+/*return highest salary, employee name, department name for each department*/
+select e.first_name, e.last_name, e.salary, d.department_name
+from Employee e Inner Join Department d ON(e.department_id=d.department_id)
+where salary IN(select Max(salary) from employee group by department_id)
