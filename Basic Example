@@ -3,10 +3,10 @@ select * from employee
 select * from department
 
 /*return employee record with max salary*/
-select * from employee where salary = (select MAx(salary) from employee)
+select * from employee where salary = (select Max(salary) from employee)
 
 /*select the highets salary in the employee table*/
-select MAx(salary) from eployee
+select Max(salary) from eployee
 
 /*select 2nd highest salary in employee table*/
 select Max(salary)
